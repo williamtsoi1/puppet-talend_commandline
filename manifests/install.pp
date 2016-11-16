@@ -12,6 +12,8 @@ class talend_commandline::install (
   $cmdline_exports_path,
   $cmdline_db_connectors_url,
 ){
+  include ::staging
+
   # Create commandline exports folder
   mkdir::p { $cmdline_exports_path:
     owner => $cmdline_user,
