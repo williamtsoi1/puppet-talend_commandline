@@ -1,10 +1,20 @@
 fixtures:
   repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-    mkdir: "https://github.com/flypenguin/puppet-mkdir.git"
-    staging: "https://github.com/voxpupuli/puppet-staging.git"
-    supervisord: "https://github.com/ajcrowe/puppet-supervisord.git"
-    concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
+    stdlib:
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+      tag: "4.13.1"
+    mkdir:
+      repo: "https://github.com/flypenguin/puppet-mkdir.git"
+      tag: "1.0.4"
+    staging:
+      repo: "https://github.com/voxpupuli/puppet-staging.git"
+      tag: "2.0.1"
+    supervisord:
+      repo: "https://github.com/ajcrowe/puppet-supervisord.git"
+      tag: "0.6.1"
+    concat:
+      repo: "https://github.com/puppetlabs/puppetlabs-concat.git"
+      tag: "2.2.0"
 
   symlinks:
     talend_commandline: "#{source_dir}"
