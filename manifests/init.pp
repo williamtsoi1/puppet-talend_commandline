@@ -31,8 +31,8 @@ class talend_commandline (
   validate_string($cmdline_subfolder)
   validate_string($cmdline_user)
   validate_string($cmdline_group)
-  validate_boolean($manage_user)
-  validate_boolean($manage_group)
+  validate_bool($manage_user)
+  validate_bool($manage_group)
   validate_string($license_url)
   validate_string($cmdline_exports_path)
 
