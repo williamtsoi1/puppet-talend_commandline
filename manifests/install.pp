@@ -8,11 +8,26 @@ class talend_commandline::install (
   $cmdline_subfolder,
   $cmdline_user,
   $cmdline_group,
+  $manage_user,
+  $manage_group,
   $license_url,
   $cmdline_exports_path,
   $cmdline_db_connectors_url,
 ){
   include ::staging
+
+  # create users and groups if required
+  if $manage_user {
+    ensure_resource('user', $cmdline_user, {
+      ensure => present,
+      gid    => $cmdline_group,
+    })
+  }
+  if $manage_group {
+    ensure_resource('group', $cmdline_group, {
+      ensure => present,
+    })
+  }
 
   # Create commandline exports folder
   mkdir::p { $cmdline_exports_path:

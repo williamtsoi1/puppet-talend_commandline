@@ -16,6 +16,8 @@ class talend_commandline (
   $cmdline_subfolder         = $::talend_commandline::params::cmdline_subfolder,
   $cmdline_user              = $::talend_commandline::params::cmdline_user,
   $cmdline_group             = $::talend_commandline::params::cmdline_group,
+  $manage_user               = $::talend_commandline::params::manage_user,
+  $manage_group              = $::talend_commandline::params::manage_group,
   $license_url               = $::talend_commandline::params::license_url,
   $cmdline_exports_path      = $::talend_commandline::params::cmdline_exports_path,
   $cmdline_db_connectors_url = $::talend_commandline::params::cmdline_db_connectors_url,
@@ -29,6 +31,8 @@ class talend_commandline (
   validate_string($cmdline_subfolder)
   validate_string($cmdline_user)
   validate_string($cmdline_group)
+  validate_boolean($manage_user)
+  validate_boolean($manage_group)
   validate_string($license_url)
   validate_string($cmdline_exports_path)
 
@@ -38,6 +42,8 @@ class talend_commandline (
     cmdline_subfolder         => $cmdline_subfolder,
     cmdline_user              => $cmdline_user,
     cmdline_group             => $cmdline_group,
+    manage_user               => $manage_user,
+    manage_group              => $manage_group,
     license_url               => $license_url,
     cmdline_exports_path      => $cmdline_exports_path,
     cmdline_db_connectors_url => $cmdline_db_connectors_url,
