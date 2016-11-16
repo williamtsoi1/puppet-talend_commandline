@@ -1,6 +1,6 @@
 {
   "name": "williamtsoi-talend_commandline",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "William Tsoi",
   "summary": "",
   "license": "MIT",
@@ -19,6 +19,14 @@
     {
       "name": "flypenguin-mkdir",
       "version_requirement": ">= 1.0.4"
+    },
+    {
+      "name": "puppetlabs-concat",
+      "version_requirement": ""
+    },
+    {
+      "name": "ajcrowe-supervisord",
+      "version_requirement": ""
     }
   ],
   "operatingsystem_support": [

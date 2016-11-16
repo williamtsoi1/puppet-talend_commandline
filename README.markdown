@@ -15,9 +15,10 @@
 
 ## Overview
 
-
+This module is used to install Talend CommandLine (essentially a copy of Talend Studio), as well as install a service using supervisord.
 
 ## Module Description
+
 
 
 ## Usage

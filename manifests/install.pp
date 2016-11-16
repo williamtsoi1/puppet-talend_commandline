@@ -28,7 +28,7 @@ class talend_commandline::install (
   }
 
   # install commandline, and license, and symlinks folder to /$cmdline_home/current
-  staging::deploy { "cmdline.zip":
+  staging::deploy { 'cmdline.zip':
     source  => $cmdline_url,
     target  => $cmdline_home,
     user    => $cmdline_user,
@@ -61,7 +61,7 @@ class talend_commandline::install (
       require => File[
         "${cmdline_home}/${cmdline_subfolder}/configuration",
         "${cmdline_home}/${cmdline_subfolder}/configuration/lib",
-        "${cmdline_home}/${cmdline_subfolder}/configuration/lib/java",
+        "${cmdline_home}/${cmdline_subfolder}/configuration/lib/java"
       ],
       user    => $cmdline_user,
       group   => $cmdline_group,
