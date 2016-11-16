@@ -1,0 +1,54 @@
+###############################################################
+# DATABASE PARAMETERS
+###############################################################
+database.useContext=false
+
+database.url=<%= @tac_db_url %>
+database.driver=<%= @tac_db_driver %>
+<% if @tac_db_username %>
+database.username=<%= @tac_db_username %>
+<% end %>
+<% if @tac_db_password %>
+database.password=<%= @tac_db_password %>
+<% end %>
+
+# enable/disable 'select for update' instructions, doesn't have effect on H2 database.
+database.server.selectForUpdate.enabled=true
+
+# enable/disable 'select for update' instructions, it is needed to increase the default lock timeout (1000 ms) to H2 if this option is enabled, you can do it by adding ;LOCK_TIMEOUT=15000  (15 seconds) at end of jdbc url.
+database.embedded.selectForUpdate.enabled=true
+
+# automatic backup for embedded database, comment the following line to disable the backup, default configuration launches the backup every days at 3:45 am, "Seconds Minutes Hours Day-of-month Month Day-of-week"
+
+database.embedded.backup.cron=0 45 3 ? * * *
+
+###############################################################
+# c3p0 hibernate pool config
+###############################################################
+
+hibernate.c3p0.max_size=32
+
+# minPoolSize:
+#hibernate.c3p0.min_size=3
+
+# maxIdleTime:
+hibernate.c3p0.timeout=300
+
+# maxStatements:
+#hibernate.c3p0.max_statements=0
+
+# acquireIncrement:
+#hibernate.c3p0.acquire_increment=3
+
+# idleConnectionTestPeriod:
+hibernate.c3p0.idle_test_period=250
+
+###############################################################
+# MISC PARAMETERS
+###############################################################
+<% if @tac_domain %>
+# Specify and url for static location or comment the line for dynamic compute:
+conf.applicationStaticLocation=<%= @tac_domain %>/<%= @tac_webapp_location %>/
+<% end %>
+# Password to access to db config page in the web-app:
+database.config.password=<%= @tac_db_config_password %>

@@ -1,0 +1,41 @@
+{
+  "name": "williamtsoi-talend_commandline",
+  "version": "0.0.1",
+  "author": "William Tsoi",
+  "summary": "",
+  "license": "MIT",
+  "source": "https://github.com/williamtsoi1/puppet-talend_commandline",
+  "project_page": "https://github.com/williamtsoi1/puppet-talend_commandline",
+  "issues_url": "https://github.com/williamtsoi1/puppet-talend_commandline/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.13.1"
+    },
+    {
+      "name": "puppet-staging",
+      "version_requirement": ">= 2.0.1"
+    },
+    {
+      "name": "flypenguin-mkdir",
+      "version_requirement": ">= 1.0.4"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}
