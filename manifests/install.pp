@@ -55,8 +55,6 @@ class talend_commandline::install (
   staging::file { "${cmdline_home}/${cmdline_subfolder}/license":
     source => $license_url,
     target => "${cmdline_home}/${cmdline_subfolder}",
-    owner  => $cmdline_user,
-    group  => $cmdline_group,
   }
   # installs required cmdline_db_connectors
   if $cmdline_db_connectors_url != undef {
