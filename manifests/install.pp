@@ -67,7 +67,7 @@ class talend_commandline::install (
       owner   => $cmdline_user,
       group   => $cmdline_group,
       mode    => '0644',
-      require => File[$cmdline_home],
+      require => Staging::Deploy['cmdline.zip'],
     }
 
     staging::deploy { 'cmdline-connectors.zip':
