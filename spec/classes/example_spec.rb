@@ -70,6 +70,10 @@ describe 'talend_commandline' do
           context 'commandline service set up in supervisord' do
             it { is_expected.to contain_Supervisord__program('cmdline') }
           end
+          context 'user and group created' do
+            it { is_expected.to contain_user('talend') }
+            it { is_expected.to contain_group('talend') }
+          end
         end
       end
     end
