@@ -59,7 +59,7 @@ describe 'talend_commandline' do
           context 'commandline installed' do
             it { is_expected.to contain_Mkdir__p('/opt/cmdline') }
             it { is_expected.to contain_file('/opt/cmdline') }
-            it { is_expected.to contain_Staging__deploy('cmdline.zip') }
+            it { is_expected.to contain_Staging__deploy('Talend-Studio-20160704_1411-V6.2.1.zip') }
           end
           context 'exports folder created' do
             it { is_expected.to contain_Mkdir__p('/opt/cmdline/exports') }

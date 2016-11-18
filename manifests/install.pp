@@ -45,7 +45,7 @@ class talend_commandline::install (
   }
 
   # install commandline, and license, and symlinks folder to /$cmdline_home/current
-  staging::deploy { 'cmdline.zip':
+  staging::deploy { "${cmdline_subfolder}.zip":
     source  => $cmdline_url,
     target  => $cmdline_home,
     user    => $cmdline_user,
@@ -67,12 +67,12 @@ class talend_commandline::install (
       owner   => $cmdline_user,
       group   => $cmdline_group,
       mode    => '0644',
-      require => Staging::Deploy['cmdline.zip'],
+      require => Staging::Deploy["${cmdline_subfolder}.zip"],
     }
 
     staging::deploy { 'cmdline-connectors.zip':
       source  => $cmdline_db_connectors_url,
-      target  => "/${cmdline_home}/${cmdline_subfolder}/configuration/lib/java",
+      target  => "${cmdline_home}/${cmdline_subfolder}/configuration/lib/java",
       require => File[
         "${cmdline_home}/${cmdline_subfolder}/configuration",
         "${cmdline_home}/${cmdline_subfolder}/configuration/lib",
@@ -80,6 +80,13 @@ class talend_commandline::install (
       ],
       user    => $cmdline_user,
       group   => $cmdline_group,
+      creates => "${cmdline_home}/${cmdline_subfolder}/configuration/lib/java/done.txt",
+    } ->
+    file { "${cmdline_home}/${cmdline_subfolder}/configuration/lib/java/done.txt":
+      content => 'done',
+      owner   => $cmdline_user,
+      group   => $cmdline_group,
+      mode    => '0644',
     }
   }
 }
