@@ -61,8 +61,10 @@ describe 'talend_commandline' do
             it { is_expected.to contain_file('/opt/cmdline') }
             it { is_expected.to contain_Staging__deploy('Talend-Studio-20160704_1411-V6.2.1.zip') }
           end
-          context 'exports folder created' do
+          context 'folders created' do
             it { is_expected.to contain_Mkdir__p('/opt/cmdline/exports') }
+            it { is_expected.to contain_Mkdir__p('/opt/cmdline/generatedjobs') }
+            it { is_expected.to contain_Mkdir__p('/opt/cmdline/usercomponents') }
           end
           context 'license installed' do
             it { is_expected.to contain_Staging__file('/opt/cmdline/Talend-Studio-20160704_1411-V6.2.1/license')}

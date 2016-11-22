@@ -12,6 +12,8 @@ class talend_commandline::install (
   $manage_group,
   $license_url,
   $cmdline_exports_path,
+  $cmdline_job_generation_path,
+  $cmdline_user_components_path,
   $cmdline_db_connectors_url,
 ){
   include ::staging
@@ -31,6 +33,20 @@ class talend_commandline::install (
 
   # Create commandline exports folder
   mkdir::p { $cmdline_exports_path:
+    owner => $cmdline_user,
+    group => $cmdline_group,
+    mode  => '0744',
+  }
+
+  # Create job generation folder
+  mkdir::p { $cmdline_job_generation_path:
+    owner => $cmdline_user,
+    group => $cmdline_group,
+    mode  => '0744',
+  }
+
+  # Create user components folder
+  mkdir::p { $cmdline_user_components_path:
     owner => $cmdline_user,
     group => $cmdline_group,
     mode  => '0744',
