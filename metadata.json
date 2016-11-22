@@ -1,6 +1,6 @@
 {
   "name": "williamtsoi-talend_commandline",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "William Tsoi",
   "summary": "This module is used to install Talend CommandLine (essentially a copy of Talend Studio), as well as install a service using supervisord.",
   "license": "MIT",
