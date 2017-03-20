@@ -21,6 +21,7 @@ group :test do
   gem 'puppet-lint-resource_reference_syntax'
 
   gem 'json_pure', '<= 2.0.1' if RUBY_VERSION < '2.0.0'
+  gem 'nokogiri', '< 1.6.8'   if RUBY_VERSION < '2.1.0'
 end
 
 group :development do
